@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryLens -Ask Your Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <header>
+    <div class="logo">
+        <div class="dot"></div>
+        <h2 class="logo-text">
+            Query<span>Lens</span>
+        </h2>
+    </div>
+    <nav>
+        <a href="index.html">Upload</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+</header>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="ai-badge">
+            ✦ AI-Powered
+        </div>
+
+        <h1 class="hero-title">
+            Ask your data <br><span> anything.</span>
+        </h1>
+
+        <p class="hero-description">
+            Upload any CSV or Excel file and explore your data
+            using natural language. <br> QueryLens writes the SQL, runs it, and charts the answer — instantly!
+        </p>
+
+       <div class="example-pills">
+    <div class="example-pill">
+        <span class="pill-q">"Which city had the highest revenue?"</span>
+        <span class="pill-arrow">→</span>
+        <span class="pill-result">Bar chart, instant</span>
+    </div>
+    <div class="example-pill">
+        <span class="pill-q">"Show sales trend over 2024"</span>
+        <span class="pill-arrow">→</span>
+        <span class="pill-result">Line chart, auto</span>
+    </div>
+</div>
+    </div>
+</section>
+
+    <div class="upload-sec">
+
+        <div class="icon-box">
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+
+            </svg>
+
+        </div>
+        <p class="upload-title">Drop your file here</p>
+
+        <p class="filetype">
+        CSV or Excel · up to 50 MB
+        </p>
+        
+        <label class="browse-file-button" for="fileInput">Browse files</label>
+        <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" hidden>
+
+    </div>
+
+    <div class="upload-status" id="uploadStatus" style="display:none">
+    <div class="spinner"></div>
+        <span id="uploadStatusText">Loading dataset…</span>
+    </div>
+
+    <div class="error-banner" id="errorBanner" style="display:none">
+        <span id="errorText"></span>
+    </div>
+
+<!--<section class="dataset-section">
+    or try a built-in dataset
+
+    <div class="datatypes">
+
+        <div class="sales">
+            Sales Data
+            <span class="row-info">
+                Regional sales · 1,152 rows
+            </span>
+        </div>
+
+        <div class="movies">
+            Movies 
+            <span class="row-info">
+                Ratings & box office · 500 rows
+            </span>
+        </div>
+
+        <div class="ipl">
+            IPL Matches
+            <span class="row-info">
+                Match results · 600 rows
+            </span>
+        </div>
+
+    </div>
+    
+</section>
+-->
+
+<section class="dataset-section">
+
+    <div class="dataset-divider">
+        <div class="line"></div>
+        <p>or try a built-in dataset</p>
+        <div class="line"></div>
+    </div>
+
+    <div class="dataset-container">
+
+        <!-- Sales -->
+        <div class="dataset-card">
+            <div class="icon sales-icon">
+                📊
+            </div>
+
+            <div class="dataset-info">
+                <h4>Sales Data</h4>
+                <p>Regional sales · 1,152 rows</p>
+            </div>
+        </div>
+
+        <!-- Movies -->
+        <div class="dataset-card">
+            <div class="icon movie-icon">
+                🎬
+            </div>
+            <div class="dataset-info">
+                <h4>Movies</h4>
+                <p>Ratings & box office · 500 rows</p>
+            </div>
+        </div>
+
+        <!-- IPL -->
+        <div class="dataset-card">
+            <div class="icon ipl-icon">
+                🏏
+            </div>
+            <div class="dataset-info">
+                <h4>IPL Matches</h4>
+                <p>Match results · 600 rows</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="how-it-works">
+
+    <h3>HOW IT WORKS</h3>
+<div class="steps">
+
+    <div class="step">
+
+        <span class="sr-no">01</span>
+
+        <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+            </svg>
+        </div>
+        <h5>Upload any CSV</h5>
+
+        <p class="inst">
+            Drag and drop your dataset. We auto-profile it.
+        </p>
+    </div>
+    
+    <div class="connector"></div>
+
+    <div class="step">
+
+        <span class="sr-no">02</span>
+        <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+
+        </div>
+        <h5>Ask a question</h5>
+
+        <p class="inst">
+            Plain English. No SQL needed.
+        </p>
+    </div>
+
+    <div class="connector"></div>
+    
+    <div class="step">
+
+        <span class="sr-no">03</span>
+        <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+
+            </svg>
+
+        </div>
+        <h5>Get instant insight</h5>
+        <p class="inst">SQL, table, and chart — no config needed.</p>
+    </div>
+</div>
+</section>
+
+<script src="js/upload.js"></script>
+</body>
+</html>
